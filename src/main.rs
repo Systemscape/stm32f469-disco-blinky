@@ -11,6 +11,7 @@ async fn main(_spawner: Spawner) {
     let mut led = Output::new(p.PG6, Level::Low, Speed::VeryHigh);
 
     loop {
+        defmt::info!("Toggling LED");
         led.toggle();
         embassy_time::Timer::after_secs(1).await
     }
